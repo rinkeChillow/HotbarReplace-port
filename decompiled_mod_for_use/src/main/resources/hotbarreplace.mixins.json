@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "xyz.twokilohertz.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "ItemStackMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "client-HotbarReplace-refmap.json"
+}

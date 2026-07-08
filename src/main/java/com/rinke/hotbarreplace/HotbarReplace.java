@@ -13,7 +13,7 @@ public class HotbarReplace implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("hello wajd !");
+		LOGGER.info("HotbarReplace loaded");
 	}
 
 	public static Identifier id(String path) {

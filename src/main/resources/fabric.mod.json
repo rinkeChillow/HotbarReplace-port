@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "hotbarreplace",
-	"version": "1.0",
+	"version": "${version}",
 	"name": "HotbarReplace",
 	"description": "Refills placed blocks in your hotbar when you run out with the same type of block from your inventory, Unofficial port",
 	"authors": [
