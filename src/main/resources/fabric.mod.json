@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "hotbarreplace",
-	"version": "1.6.0",
+	"version": "1.26.1",
 	"name": "HotbarReplace",
 	"description": "Refills placed blocks in your hotbar when you run out with the same type of block from your inventory, Unofficial port",
 	"authors": [
@@ -31,8 +31,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
-		"minecraft": "=1.21.6",
-		"java": ">=21",
+		"minecraft": ">=26.1",
+		"java": ">=25",
 		"fabric-api": "*"
 	}
 }
