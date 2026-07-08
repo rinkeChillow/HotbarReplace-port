@@ -54,7 +54,7 @@ public class HotbarReplaceClient implements ClientModInitializer {
 			}
 			long clickDelayMs = Math.round(1000.0f / currentFps);
 			client.interactionManager.clickSlot(player.currentScreenHandler.syncId, i, 0, SlotActionType.PICKUP, player);
-			int slot = hand == Hand.OFF_HAND ? OFFHAND_SLOT : inventory.selectedSlot;
+			int slot = hand == Hand.OFF_HAND ? OFFHAND_SLOT : inventory.getSelectedSlot();
 			SCHEDULER.schedule(() -> client.execute(() -> {
 				if (client.interactionManager != null && player.currentScreenHandler != null) {
 					client.interactionManager.clickSlot(player.currentScreenHandler.syncId, slot + HOTBAR_SLOT_OFFSET, 0, SlotActionType.PICKUP, player);

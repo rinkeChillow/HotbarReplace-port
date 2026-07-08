@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -26,7 +25,7 @@ public class ItemStackMixin {
 	private Item hotbarreplace$lastUsedItem = null;
 
 	@Inject(at = @At("HEAD"), method = "use")
-	private void hotbarreplace$use_HEAD(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> info) {
+	private void hotbarreplace$use_HEAD(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> info) {
 		this.hotbarreplace$lastUsedItem = player.getStackInHand(hand).getItem();
 	}
 
@@ -42,8 +41,8 @@ public class ItemStackMixin {
 	}
 
 	@Inject(at = @At("TAIL"), method = "use")
-	private void hotbarreplace$use_TAIL(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> info) {
-		if (info.getReturnValue().getResult() != ActionResult.SUCCESS) {
+	private void hotbarreplace$use_TAIL(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> info) {
+		if (info.getReturnValue() != ActionResult.SUCCESS) {
 			return;
 		}
 		if (player.getStackInHand(hand).getCount() != 0) {
